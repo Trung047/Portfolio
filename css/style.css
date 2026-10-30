@@ -1,0 +1,54 @@
+/* Style chính – chủ đề đỏ / đen công nghệ */
+:root{--red:#ff2a3d;--red-rgb:255,42,61}
+body{background:#07070a;color:#ece4e5;overflow-x:hidden}
+h1,h2,h3,.navlink{font-family:'Chakra Petch','Inter',sans-serif}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(ellipse at 20% 25%,rgba(120,8,24,.55) 0%,transparent 55%),
+  radial-gradient(ellipse at 85% 80%,rgba(90,4,16,.45) 0%,transparent 50%),
+  linear-gradient(180deg,#0a0507,#060608)}
+/* lưới công nghệ + tia quét */
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(var(--red-rgb),.07) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--red-rgb),.07) 1px,transparent 1px);
+  background-size:52px 52px;-webkit-mask-image:radial-gradient(ellipse at center,#000 30%,transparent 85%);mask-image:radial-gradient(ellipse at center,#000 30%,transparent 85%)}
+body::after{content:"";position:fixed;left:0;right:0;top:-160px;height:160px;z-index:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(var(--red-rgb),.07),transparent);animation:scan 7s linear infinite}
+@keyframes scan{to{transform:translateY(calc(100vh + 320px))}}
+main,footer,nav{position:relative;z-index:1}
+
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.5,0,0,1)}
+.reveal.active{opacity:1;transform:none}
+.d1{transition-delay:100ms}.d2{transition-delay:200ms}.d3{transition-delay:300ms}
+::selection{background:var(--red);color:#fff}
+
+/* nav */
+#pill{background:rgba(14,8,10,.8);backdrop-filter:blur(10px);border:1px solid rgba(var(--red-rgb),.35);box-shadow:0 0 22px rgba(var(--red-rgb),.12)}
+.navlink{position:relative;padding:.75rem 1.5rem;border-radius:9999px;font-weight:600;font-size:.95rem;color:#e9dede;transition:background .3s,color .3s,box-shadow .3s}
+.navlink:hover{background:rgba(var(--red-rgb),.18)}
+.navlink.on{background:rgba(var(--red-rgb),.22);color:#fff;box-shadow:inset 0 0 0 1px rgba(var(--red-rgb),.7),0 0 14px rgba(var(--red-rgb),.35)}
+#navbot{position:absolute;top:-24px;left:0;width:58px;transition:transform .45s cubic-bezier(.5,0,.2,1);pointer-events:none;filter:drop-shadow(0 0 8px rgba(125,211,252,.55))}
+
+/* hero */
+h1 .neon-t{text-shadow:0 0 26px rgba(var(--red-rgb),.55)}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--red);margin-left:4px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btn-glow{transition:all .3s;box-shadow:0 0 14px rgba(var(--red-rgb),.35)}
+.btn-glow:hover{box-shadow:0 0 28px rgba(var(--red-rgb),.8);transform:translateY(-2px)}
+
+/* thẻ kính + khung góc + đèn rọi theo chuột */
+.glass{position:relative;background:rgba(14,10,12,.86);border:1px solid rgba(var(--red-rgb),.4);border-radius:1.5rem;box-shadow:0 0 30px rgba(var(--red-rgb),.08)}
+.glass::before,.app::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;
+  background:radial-gradient(260px circle at var(--x,50%) var(--y,50%),rgba(var(--red-rgb),.2),transparent 65%)}
+.glass:hover::before,.app:hover::before{opacity:1}
+
+.soc{width:3.6rem;height:3.6rem;display:flex;align-items:center;justify-content:center;border-radius:1rem;background:#140b0e;border:1px solid rgba(var(--red-rgb),.3);transition:all .3s}
+.soc:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px);box-shadow:0 0 22px rgba(var(--red-rgb),.6)}
+.prj{transition:transform .3s,border-color .3s,box-shadow .3s;border-color:rgba(var(--red-rgb),.22)}
+.prj:hover{transform:translateY(-6px);border-color:var(--red);box-shadow:0 0 28px rgba(var(--red-rgb),.3)}
+.portrait{box-shadow:0 0 0 1px rgba(var(--red-rgb),.6),0 0 45px rgba(var(--red-rgb),.35)}
+.skill-fill{box-shadow:0 0 10px rgba(var(--red-rgb),.7)}
+
+/* ứng dụng yêu thích */
+.app{position:relative;display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:.6rem .4rem;border-radius:1rem;background:rgba(255,255,255,.04);border:1px solid rgba(var(--red-rgb),.18);transition:transform .3s,border-color .3s,background .3s,box-shadow .3s}
+.app:hover{transform:translateY(-5px);border-color:var(--red);background:rgba(var(--red-rgb),.1);box-shadow:0 0 18px rgba(var(--red-rgb),.35)}
+.app img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.9rem}
+.app span{font-size:.7rem;font-weight:600;color:#ece4e5;text-align:center;line-height:1.2}

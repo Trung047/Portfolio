@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nguyễn Văn Trung - IT Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="js/tailwind-config.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/effects.css">
+</head>
+<body class="antialiased">
+<canvas id="bg"></canvas>
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-center pt-10 px-2">
+  <div class="relative">
+    <svg id="navbot" viewBox="0 0 60 60" fill="none"><line x1="30" y1="3" x2="30" y2="12" stroke="#7cc9ee" stroke-width="2.5" stroke-linecap="round"/><circle cx="30" cy="4" r="3.2" fill="#e0f7ff"/><rect x="4" y="24" width="6" height="14" rx="3" fill="#6bb8e0"/><rect x="50" y="24" width="6" height="14" rx="3" fill="#6bb8e0"/><rect x="9" y="12" width="42" height="36" rx="13" fill="#a5e0fa" stroke="#6bb8e0" stroke-width="2"/><rect x="14" y="19" width="32" height="22" rx="9" fill="#0b1a2a"/><circle cx="23" cy="30" r="4" fill="#7df9ff"/><circle cx="37" cy="30" r="4" fill="#7df9ff"/><path d="M26 37q4 3 8 0" stroke="#7df9ff" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+    <div id="pill" class="hidden md:flex rounded-full p-2 gap-1">
+      <a href="#home" class="navlink on">Trang chủ</a>
+      <a href="#about" class="navlink">Giới thiệu</a>
+      <a href="#projects" class="navlink">Dự án</a>
+      <a href="#contact" class="navlink">Liên hệ</a>
+    </div>
+    <button id="mbtn" class="md:hidden w-12 h-12 rounded-full text-white" style="background:rgba(8,16,40,.8);border:1px solid rgba(148,163,184,.25)"><i class="fas fa-bars"></i></button>
+    <div id="mmenu" class="hidden md:hidden absolute right-0 top-14 w-48 rounded-2xl p-2" style="background:#0b1430;border:1px solid rgba(148,163,184,.25)">
+      <a href="#home" class="block px-4 py-2 rounded-lg hover:bg-white/5">Trang chủ</a>
+      <a href="#about" class="block px-4 py-2 rounded-lg hover:bg-white/5">Giới thiệu</a>
+      <a href="#projects" class="block px-4 py-2 rounded-lg hover:bg-white/5">Dự án</a>
+      <a href="#contact" class="block px-4 py-2 rounded-lg hover:bg-white/5">Liên hệ</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center pt-32 pb-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-12 items-center w-full">
+    <div>
+      <h1 class="font-extrabold leading-[1.08] text-5xl sm:text-6xl lg:text-7xl reveal">
+        <span class="text-neon neon-t">Biến ý tưởng</span><br><span class="text-ice">thành hiện thực</span>
+      </h1>
+      <p class="mt-8 text-xl sm:text-2xl text-slate-300 reveal d1"><span id="typed"></span><span class="cursor"></span></p>
+      <p class="mt-8 text-slate-300 leading-8 max-w-xl reveal d2">Bắt đầu từ sự tò mò, lớn dần thành đam mê. Tôi xây dựng những sản phẩm số không chỉ đẹp mắt mà còn thật sự có ý nghĩa với người dùng.</p>
+      <div class="mt-8 flex gap-4 reveal d3">
+        <a href="#projects" class="btn-glow bg-neon text-white font-bold py-4 px-8 rounded-xl">Dự án <i class="fas fa-arrow-right ml-2"></i></a>
+        <a href="#contact" class="border border-slate-500/40 hover:border-neon hover:bg-neon/10 text-white font-bold py-4 px-8 rounded-xl transition">Liên hệ <i class="fas fa-arrow-right ml-2"></i></a>
+      </div>
+      <div class="mt-10 flex items-center gap-4 reveal d3">
+        <span class="text-neon text-sm tracking-[.25em]">KẾT NỐI</span>
+        <a href="https://www.facebook.com/nguyen.van.trung.240525" target="_blank" rel="noopener" class="soc" title="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+        <a href="https://github.com/Trung047" target="_blank" rel="noopener" class="soc" title="GitHub"><i class="fab fa-github text-xl"></i></a>
+        <a href="mailto:trunggn123@gmail.com" class="soc" title="Gmail"><i class="fas fa-envelope text-xl"></i></a>
+      </div>
+    </div>
+
+    <!-- Favorite apps card -->
+    <div class="glass overflow-hidden reveal d2" id="apps">
+      <div class="p-8 pb-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-ice">Ứng dụng yêu thích</h2>
+        <p class="text-slate-400 mt-2">Những game và app tôi dùng mỗi ngày...</p>
+      </div>
+      <div class="px-6 pb-8 space-y-6">
+        <div>
+          <p class="text-neon text-xs tracking-[.25em] mb-3">GAME</p>
+          <div class="grid grid-cols-4 gap-3 sm:gap-4">
+          <div class="app" title="Liên Quân Mobile"><img src="images/apps/lien-quan.png" alt="Liên Quân Mobile" loading="lazy"><span>Liên Quân Mobile</span></div>
+          <div class="app" title="Free Fire"><img src="images/apps/free-fire.png" alt="Free Fire" loading="lazy"><span>Free Fire</span></div>
+          <div class="app" title="Đấu Trường Chân Lý"><img src="images/apps/tft.png" alt="Đấu Trường Chân Lý" loading="lazy"><span>Đấu Trường Chân Lý</span></div>
+          <div class="app" title="Ai Là Triệu Phú"><img src="images/apps/ai-la-trieu-phu.png" alt="Ai Là Triệu Phú" loading="lazy"><span>Ai Là Triệu Phú</span></div>
+          </div>
+        </div>
+        <div>
+          <p class="text-neon text-xs tracking-[.25em] mb-3">MẠNG XÃ HỘI</p>
+          <div class="grid grid-cols-4 gap-3 sm:gap-4">
+          <div class="app" title="Facebook"><img src="images/apps/facebook.png" alt="Facebook" loading="lazy"><span>Facebook</span></div>
+          <div class="app" title="Messenger"><img src="images/apps/messenger.png" alt="Messenger" loading="lazy"><span>Messenger</span></div>
+          <div class="app" title="TikTok"><img src="images/apps/tiktok.png" alt="TikTok" loading="lazy"><span>TikTok</span></div>
+          <div class="app" title="Threads"><img src="images/apps/threads.png" alt="Threads" loading="lazy"><span>Threads</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-4xl font-extrabold">Giới thiệu <span class="text-neon">bản thân</span></h2>
+      <div class="w-20 h-1 bg-neon mx-auto rounded-full mt-4"></div>
+    </div>
+    <div class="grid md:grid-cols-5 gap-10 items-start">
+      <div class="md:col-span-2 reveal d1 flex flex-col items-center">
+        <img src="images/chan_dung.png" alt="Nguyễn Văn Trung" class="portrait rounded-3xl w-64 sm:w-72 object-cover">
+        <h3 class="mt-6 text-2xl font-bold text-ice">Nguyễn Văn Trung</h3>
+        <p class="text-neon">Sinh viên Công nghệ thông tin – UTH</p>
+      </div>
+      <div class="md:col-span-3 space-y-8">
+        <div class="glass p-8 reveal d1" style="border-radius:1.25rem">
+          <h3 class="text-xl font-bold mb-5 pb-4 border-b border-white/10">Thông tin cá nhân</h3>
+          <ul class="grid sm:grid-cols-2 gap-5 text-slate-300">
+            <li class="flex items-center gap-4"><span class="w-10 h-10 rounded-full bg-neon/15 flex items-center justify-center text-neon"><i class="fas fa-calendar-alt"></i></span><div><p class="text-sm text-slate-500">Ngày sinh</p><p class="font-medium text-white">04 / 07 / 2006</p></div></li>
+            <li class="flex items-center gap-4"><span class="w-10 h-10 rounded-full bg-neon/15 flex items-center justify-center text-neon"><i class="fas fa-map-marker-alt"></i></span><div><p class="text-sm text-slate-500">Quê quán</p><p class="font-medium text-white">Chư Sê, Gia Lai</p></div></li>
+            <li class="flex items-center gap-4"><span class="w-10 h-10 rounded-full bg-neon/15 flex items-center justify-center text-neon"><i class="fas fa-university"></i></span><div><p class="text-sm text-slate-500">Học vấn</p><p class="font-medium text-white">ĐH Giao thông vận tải TP.HCM (UTH)</p></div></li>
+            <li class="flex items-center gap-4"><span class="w-10 h-10 rounded-full bg-neon/15 flex items-center justify-center text-neon"><i class="fas fa-heart"></i></span><div><p class="text-sm text-slate-500">Sở thích</p><p class="font-medium text-white">Bóng đá, Cầu lông, Lập trình</p></div></li>
+          </ul>
+        </div>
+        <div class="reveal d2">
+          <h3 class="text-xl font-bold mb-3">Mục tiêu nghề nghiệp</h3>
+          <p class="text-slate-400 leading-relaxed">Là một sinh viên ngành Công nghệ thông tin tràn đầy nhiệt huyết từ Gia Lai, tôi luôn nỗ lực học hỏi các công nghệ mới để trở thành một lập trình viên xuất sắc. Tại UTH, tôi được trang bị kiến thức nền tảng vững chắc và không ngừng thực hành qua các dự án.</p>
+          <p class="text-slate-400 leading-relaxed mt-4">Ngoài giờ code, bạn sẽ thường thấy tôi trên sân bóng đá hoặc sân cầu lông. Thể thao giúp tôi rèn luyện sự bền bỉ và tinh thần làm việc nhóm.</p>
+        </div>
+        <div class="space-y-4 reveal d3" id="skills"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24">
+  <div class="max-w-6xl mx-auto px-6 lg:px-12">
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-4xl font-extrabold">Dự án <span class="text-neon">của tôi</span></h2>
+      <div class="w-20 h-1 bg-neon mx-auto rounded-full mt-4"></div>
+      <p class="text-slate-400 mt-4">Một vài dự án nhóm tôi đã tham gia ở trường.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="prj glass p-7 reveal d1" style="border-radius:1.25rem"><div class="w-12 h-12 rounded-xl bg-neon/15 text-neon flex items-center justify-center text-xl mb-5"><i class="fas fa-comments"></i></div><h3 class="font-bold text-xl text-ice">NetChat</h3><p class="text-slate-400 mt-2 text-sm leading-6">Ứng dụng chat desktop viết bằng Java cho môn Lập trình mạng.</p><div class="mt-4 flex gap-2 flex-wrap text-xs"><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">Java</span><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">Socket</span></div></div>
+      <div class="prj glass p-7 reveal d2" style="border-radius:1.25rem"><div class="w-12 h-12 rounded-xl bg-neon/15 text-neon flex items-center justify-center text-xl mb-5"><i class="fas fa-store"></i></div><h3 class="font-bold text-xl text-ice">Quản lý cửa hàng tiện lợi</h3><p class="text-slate-400 mt-2 text-sm leading-6">Hệ thống quản lý cửa hàng tiện lợi trên MySQL cho môn Quản trị cơ sở dữ liệu.</p><div class="mt-4 flex gap-2 flex-wrap text-xs"><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">MySQL</span><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">Stored Procedure</span></div></div>
+      <div class="prj glass p-7 reveal d3" style="border-radius:1.25rem"><div class="w-12 h-12 rounded-xl bg-neon/15 text-neon flex items-center justify-center text-xl mb-5"><i class="fas fa-table-cells"></i></div><h3 class="font-bold text-xl text-ice">Giải Sudoku bằng CSP</h3><p class="text-slate-400 mt-2 text-sm leading-6">So sánh Backtracking, Backtracking + Heuristic và Local Search trong môn Trí tuệ nhân tạo.</p><div class="mt-4 flex gap-2 flex-wrap text-xs"><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">Python</span><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">AI</span></div></div>
+      <div class="prj glass p-7 reveal d1" style="border-radius:1.25rem"><div class="w-12 h-12 rounded-xl bg-neon/15 text-neon flex items-center justify-center text-xl mb-5"><i class="fas fa-shield-halved"></i></div><h3 class="font-bold text-xl text-ice">Xây dựng IDS với AI</h3><p class="text-slate-400 mt-2 text-sm leading-6">Hệ thống phát hiện xâm nhập ứng dụng AI cho môn An toàn thông tin.</p><div class="mt-4 flex gap-2 flex-wrap text-xs"><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">IDS</span><span class="px-3 py-1 rounded-full bg-neon/15 text-neon">Machine Learning</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <div class="reveal mb-10">
+      <h2 class="text-4xl font-extrabold">Liên hệ <span class="text-neon">với tôi</span></h2>
+      <p class="text-slate-400 mt-4">Bạn có dự án hoặc muốn kết nối? Đừng ngần ngại liên hệ!</p>
+    </div>
+    <div class="flex justify-center gap-4 reveal d1">
+      <a href="https://www.facebook.com/nguyen.van.trung.240525" target="_blank" rel="noopener" class="soc" title="Facebook"><i class="fab fa-facebook-f text-xl"></i></a>
+        <a href="https://github.com/Trung047" target="_blank" rel="noopener" class="soc" title="GitHub"><i class="fab fa-github text-xl"></i></a>
+        <a href="mailto:trunggn123@gmail.com" class="soc" title="Gmail"><i class="fas fa-envelope text-xl"></i></a>
+    </div>
+    <form class="glass p-8 mt-12 text-left space-y-4 reveal d2" style="border-radius:1.25rem" onsubmit="event.preventDefault();alert('Cảm ơn bạn! Chức năng gửi mail đang được phát triển.')">
+      <div class="grid md:grid-cols-2 gap-4">
+        <div><label class="block text-sm text-slate-400 mb-1">Tên của bạn</label><input class="w-full bg-navy border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon" placeholder="Nguyễn Văn A"></div>
+        <div><label class="block text-sm text-slate-400 mb-1">Email</label><input type="email" class="w-full bg-navy border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon" placeholder="email@example.com"></div>
+      </div>
+      <div><label class="block text-sm text-slate-400 mb-1">Tin nhắn</label><textarea rows="4" class="w-full bg-navy border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-neon" placeholder="Xin chào Trung..."></textarea></div>
+      <button class="btn-glow w-full bg-neon text-white font-bold py-3 rounded-xl">Gửi tin nhắn</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="py-8 text-center border-t border-white/5" style="background:rgba(4,2,3,.85)">
+  <p class="text-slate-500 text-sm">&copy; 2026 Nguyễn Văn Trung. Thiết kế với <i class="fas fa-heart text-red-500 mx-1"></i> từ Gia Lai.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/robots.js"></script>
+</body>
+</html>
